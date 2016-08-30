@@ -3,17 +3,30 @@
 The message wall application for Codecoolers
 
 ## Server
-
 The server script is used to serve the client applications.
 It's purpose is to store the given tweets and send them back when requested.
 
-Available requests:
+### How to run it
+The server can be started different ways.
 
-### / GET
+#### Development way - running in console
+From the Terminal:
+1. Run `export FLASK_APP=server.py` to tell Flask, what script contains your server.
+1. Run the Flask server with: `python3 -m flask run --port 9876 --host 0.0.0.0`
+
+#### Production server way - running in background
+1. To start, run the `./server-start.sh` script.
+1. To stop it, run the `./server-stop.sh` script.
+
+This way, the server will launch in the background as a service. You can run it once, as it listens on a specific port and this port is hardcoded in this script. To restart it, just stop it and start it again.
+
+### Available requests
+
+#### / GET
 testing address: `/` (method: GET)
 It returns the `It works!` string.
 
-### /tweet GET
+#### /tweet GET
 getting tweets: `/tweet` (method: GET)
 optional parameters:
 
@@ -45,7 +58,7 @@ Example output:
 ```
 
 
-### /tweet POST
+#### /tweet POST
 posting tweets: `/tweet` (method: POST)
 expected request body:
 
