@@ -11,6 +11,7 @@ The server can be started different ways.
 
 #### Development way - running in console
 From the Terminal:
+
 1. Run `export FLASK_APP=server.py` to tell Flask, what script contains your server.
 1. Run the Flask server with: `python3 -m flask run --port 9876 --host 0.0.0.0`
 
